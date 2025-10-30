@@ -14,7 +14,7 @@ class LinearRegression():
     def predict(self, x):
         pred = 0.0
         # write your function body here - begin
-
+        pred = self.w*x + self.b
         # write your function body here - end
         return pred
 
@@ -27,7 +27,7 @@ class LinearRegression():
     def SE(self, x, y):
         SE = 0.0 # Calculate Square error
         # write your function body here - begin
-
+        SE = y - self.predict(x)**2
         # write your function body here - end
         return SE
 
@@ -42,7 +42,8 @@ class LinearRegression():
         grad_for_w = 0.0
         grad_for_b = 0.0
         # write your function body here - begin
-
+        grad_for_w = -2*x*(y-(self.w*x)-self.b)
+        grad_for_b = -2*(y-(self.w*x)-self.b)
         # write your function body here - end
         return np.array([grad_for_w, grad_for_b])
 
@@ -53,5 +54,6 @@ class LinearRegression():
     ## Process: update self.w and self.b using their gradients
     ## Return: None
     def update_params(self, grad_for_w, grad_for_b, alpha):
-
+        self.w = self.w - alpha*grad_for_w
+        self.b = self.b - alpha*grad_for_b
         return
