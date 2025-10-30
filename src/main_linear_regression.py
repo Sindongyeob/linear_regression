@@ -71,8 +71,6 @@ def main(gd_mode, alpha):
     #w, b 초기값
     init_w = model.w
     init_b = model.b
-    print("\n===== Initial Model Parameters =====")
-    print(f"w: {init_w:.6f}, b: {init_b:.6f}")
 
     # 학습 전 그래프 생성
     plt.figure(figsize=(8, 6))
@@ -118,7 +116,7 @@ def main(gd_mode, alpha):
     plt.scatter(tr_income, tr_happiness, label='Training Data', color='blue')
     prediction = model.predict(tr_income)
     plt.plot(tr_income, prediction, label='Trained Model', color='red')
-    plt.title('Income vs. Happiness (After Training - Training Data)')
+    plt.title('Income vs. Happiness (After Training)')
     plt.xlabel('Income')
     plt.ylabel('Happiness')
     plt.legend()
@@ -162,11 +160,11 @@ def main(gd_mode, alpha):
         test_mse += se
     test_mse = test_mse / num_test_data
 
-    print(f"\n||||||||           Final Results            ||||||||")
-    print(f"Initial Model Parameters - w: {init_w:.6f}, b: {init_b:.6f}")
-    print(f"Final Model Parameters   - w: {model.w:.6f}, b: {model.b:.6f}")
-    print(f"Validation MSE: {valid_mse:.6f}")
-    print(f"Test MSE: {test_mse:.6f}")
+    print(f"\n||||||||            Final Results            ||||||||")
+    print(f"Model param (before train): w: {init_w:.6f}, b: {init_b:.6f}")
+    print(f"Model param (after train): w: {model.w:.6f}, b: {model.b:.6f}")
+    print(f"validation MSE: {valid_mse:.6f}")
+    print(f"test MSE: {test_mse:.6f}")
     ## OK. Here, we finished the training - write code for evaluation - end
 
 if __name__ == "__main__":
