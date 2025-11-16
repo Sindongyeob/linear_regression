@@ -171,5 +171,5 @@ if __name__ == "__main__":
     ########## gd_mode : 0 => stochastic GD, other => batch GD
     gd_mode = 0
     ########## learning rate
-    alpha = 0.0000001
+    alpha = 0.01
     main(gd_mode=gd_mode, alpha=alpha)
