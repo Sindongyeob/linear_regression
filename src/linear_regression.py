@@ -27,7 +27,7 @@ class LinearRegression():
     def SE(self, x, y):
         SE = 0.0 # Calculate Square error
         # write your function body here - begin
-        SE = y - self.predict(x)**2
+        SE = (y - self.predict(x))**2
         # write your function body here - end
         return SE
 

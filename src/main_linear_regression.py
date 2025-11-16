@@ -161,15 +161,15 @@ def main(gd_mode, alpha):
     test_mse = test_mse / num_test_data
 
     print(f"\n||||||||            Final Results            ||||||||")
-    print(f"Model param (before train): w: {init_w:.6f}, b: {init_b:.6f}")
-    print(f"Model param (after train): w: {model.w:.6f}, b: {model.b:.6f}")
-    print(f"validation MSE: {valid_mse:.6f}")
-    print(f"test MSE: {test_mse:.6f}")
+    print(f"Model param (before train): w: {init_w:.3f}, b: {init_b:.3f}")
+    print(f"Model param (after train): w: {model.w:.3f}, b: {model.b:.3f}")
+    print(f"validation MSE: {valid_mse:.5f}")
+    print(f"test MSE: {test_mse:.5f}")
     ## OK. Here, we finished the training - write code for evaluation - end
 
 if __name__ == "__main__":
     ########## gd_mode : 0 => stochastic GD, other => batch GD
     gd_mode = 0
     ########## learning rate
-    alpha = 0.01
+    alpha = 0.0000001
     main(gd_mode=gd_mode, alpha=alpha)
